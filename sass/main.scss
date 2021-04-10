@@ -1,0 +1,137 @@
+/*====================
+    VARIABLES
+====================*/
+$color-orange: rgb(227, 136, 38);
+$color-cyan: rgb(0, 105, 112);
+$color-dark-cyan: rgb(0, 66, 65);
+
+$color-white: rgba(255, 255, 255, 0.75);
+$color-light-gray: rgb(242, 242, 242);
+
+$font-lg: 3.6rem;
+$font-md: 1.5rem;
+$font-sm: 1.0rem;
+/*====================
+    END VARIABLES
+====================*/
+
+/*====================
+    STYLES
+====================*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: $font-md;
+  letter-spacing: 0.2px;
+  color: $color-light-gray;
+  box-sizing: border-box;
+  background-color: $color-light-gray;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  width: 92rem;
+
+  & > * {
+    width: 33.3333%;
+    padding: 5rem;
+    height: 50rem;
+  }
+
+  &__1 {
+    background-color: $color-orange;
+    border-radius: 0.8rem 0 0 0.8rem;
+  }
+
+  &__2 {
+    background-color: $color-cyan;
+  }
+
+  &__3 {
+    background-color: $color-dark-cyan;
+    border-radius: 0 0.8rem 0.8rem 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--label {
+      font-family: 'Big Shoulders Display', cursive;
+      font-size: $font-lg;
+      text-transform: uppercase;
+      padding: 2.4rem 0;
+    }
+
+    &--description {
+      color: $color-white;
+      line-height: 1.8;
+    }
+
+    &--button {
+      font-family: 'Lexend Deca', sans-serif;
+      background-color: $color-light-gray;
+      padding: 1.5rem 3rem;
+      border: 2px solid $color-light-gray;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #000;
+      mix-blend-mode: screen;
+      cursor: pointer;
+    }
+
+    &--button:hover {
+      background-color: unset;
+      color: currentColor;
+    }
+  }
+}
+
+@media only screen and (max-width: 37.5rem) {
+  body {
+    height: unset;
+    margin: 6rem 3rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+
+    & > * {
+      width: 100%;
+    }
+
+    &__1 {
+      border-radius: 0.8rem 0.8rem 0 0;
+    }
+  
+    &__3 {
+      border-radius: 0 0 0.8rem 0.8rem;
+    }
+  }
+}
+/*====================
+    END STYLES
+====================*/
